@@ -6,16 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives | 妖怪</title>
+  <title>vue第一天 | 妖怪</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="keywords" content="前端,js,jquery,javascript,html5,css3">
-<meta property="og:type" content="website">
-<meta property="og:title" content="妖怪">
-<meta property="og:url" content="http://yoursite.com/archives/index.html">
+  <meta name="description" content="vue介绍 介绍 作者: 尤雨溪 14年2月开源  vue产品介绍 weex 能够转换vue代码，成为移动端原生应用 ios Android PC vuex 凡是大型项目必用，公共数据管理 2014年开源的   核心特点: 组件化，组件化比模块化更细 组成部件 组件: 模板template+ 动态效果script + 样式style   双向数据流(双向数据绑定的现象) 1向:内存(js对象的属性">
+<meta name="keywords" content="vue">
+<meta property="og:type" content="article">
+<meta property="og:title" content="vue第一天">
+<meta property="og:url" content="http://yoursite.com/2018/06/16/vue第一天/index.html">
 <meta property="og:site_name" content="妖怪">
+<meta property="og:description" content="vue介绍 介绍 作者: 尤雨溪 14年2月开源  vue产品介绍 weex 能够转换vue代码，成为移动端原生应用 ios Android PC vuex 凡是大型项目必用，公共数据管理 2014年开源的   核心特点: 组件化，组件化比模块化更细 组成部件 组件: 模板template+ 动态效果script + 样式style   双向数据流(双向数据绑定的现象) 1向:内存(js对象的属性">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-06-16T15:25:30.011Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="妖怪">
+<meta name="twitter:title" content="vue第一天">
+<meta name="twitter:description" content="vue介绍 介绍 作者: 尤雨溪 14年2月开源  vue产品介绍 weex 能够转换vue代码，成为移动端原生应用 ios Android PC vuex 凡是大型项目必用，公共数据管理 2014年开源的   核心特点: 组件化，组件化比模块化更细 组成部件 组件: 模板template+ 动态效果script + 样式style   双向数据流(双向数据绑定的现象) 1向:内存(js对象的属性">
   
     <link rel="alternative" href="/atom.xml" title="妖怪" type="application/atom+xml">
   
@@ -149,36 +153,243 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-vue第一天" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/06/16/vue第一天/" class="archive-article-date">
-  	<time datetime="2018-06-16T15:24:38.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-16</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/06/16/vue第一天/">vue第一天</a>
+    <h1 class="article-title" itemprop="name">
+      vue第一天
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2018/06/16/vue第一天/" class="archive-article-date">
+  	<time datetime="2018-06-16T15:24:38.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-16</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="vue介绍"><a href="#vue介绍" class="headerlink" title="vue介绍"></a>vue介绍</h3><hr>
+<h4 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h4><ul>
+<li>作者: 尤雨溪 14年2月开源</li>
+</ul>
+<h4 id="vue产品介绍"><a href="#vue产品介绍" class="headerlink" title="vue产品介绍"></a>vue产品介绍</h4><ul>
+<li>weex 能够转换vue代码，成为移动端原生应用 ios Android PC</li>
+<li>vuex 凡是大型项目必用，公共数据管理</li>
+<li>2014年开源的  <ul>
+<li>核心特点:<ul>
+<li>组件化，组件化比模块化更细<ul>
+<li>组成部件</li>
+<li>组件: 模板template+ 动态效果script + 样式style</li>
+</ul>
+</li>
+<li>双向数据流(双向数据绑定的现象)<ul>
+<li>1向:内存(js对象的属性)发生改变影响页面</li>
+<li>1向:页面发生改变影响内存(js对象的属性)</li>
+</ul>
+</li>
+<li>数据驱动<ul>
+<li>内存的属性发生改变，驱动页面显示做调整</li>
+</ul>
+</li>
+<li>双向数据绑定实现原理（js到页面）<ul>
+<li>数据劫持(Object.defineProperty(obj,’name’,{set:function(v){ //这里就能知道obj.name被改变,操作DOM改变dom元素的值  }}) )</li>
+</ul>
+</li>
+<li>页面需要能知道被改变了，基于什么（事件，页面到js)<ul>
+<li>基于的是很多的事件，比如onchange -&gt; 改变js属性的值</li>
+</ul>
+</li>
+<li>MVVM框架<ul>
+<li>M:从js到页面 利用defineProperty M -&gt; model数据模型obj</li>
+<li>V:读取模板，获取模板中哪些元素使用了指令，给其添加事件，后期改变元素值</li>
+<li>VM（view:model）: vue组件</li>
+</ul>
+</li>
+<li>IE9以下不支持(Object.defineProperty)</li>
+<li>善于开发单页应用SPA</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="vue起步"><a href="#vue起步" class="headerlink" title="vue起步"></a>vue起步</h4><ul>
+<li>构建vue实例的options</li>
+<li>render</li>
+</ul>
+<h4 id="vue起步总结"><a href="#vue起步总结" class="headerlink" title="vue起步总结"></a>vue起步总结</h4><ul>
+<li>流程 <ul>
+<li>1:引包</li>
+<li>2:构建viewmodel(new Vue) 启动vue程序</li>
+<li>3:一般项目不使用viewmodel的template，而是通过render属性来渲染指定的组件<ul>
+<li>组件包含组件，组件又包含组件</li>
+</ul>
+</li>
+<li>3:使用render属性<ul>
+<li>render是一个函数， return createElement(options)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>options:<ul>
+<li>el:指定渲染目的地</li>
+<li>template:模板</li>
+<li>data (new Vue的时候其是一个对象,组件上使用 是一个函数，返回一个对象)</li>
+</ul>
+</li>
+</ul>
+<h4 id="vue中常用的v-指令演示"><a href="#vue中常用的v-指令演示" class="headerlink" title="vue中常用的v-指令演示"></a>vue中常用的v-指令演示</h4><ul>
+<li>常用指令 </li>
+<li>v-text 指定data中的属性名, 设置元素的innerText(双标签)</li>
+<li>v-html 指定data中的属性名, 设置元素的innerHTML(双标签)</li>
+<li>v-if 元素是否存在的问题</li>
+<li>v-show 元素是否显示的问题</li>
+<li>v-else 结合v-if使用,两者存在其一</li>
+<li>v-model 双向数据绑定</li>
+</ul>
+<h4 id="class结合v-bind使用"><a href="#class结合v-bind使用" class="headerlink" title="class结合v-bind使用"></a>class结合v-bind使用</h4><ul>
+<li>v-bind 是绑定属性，其属性值会经过计算，得到最终结果再复制给属性<ul>
+<li>表达式中，使用的变量都是vue中的属性</li>
+<li>v-bind:属性名=”表达式”</li>
+</ul>
+</li>
+</ul>
+<h4 id="methods和v-on的使用"><a href="#methods和v-on的使用" class="headerlink" title="methods和v-on的使用"></a>methods和v-on的使用</h4><ul>
+<li>options:{  methods:{ 函数名:函数体} }<ul>
+<li>methods是一个对象</li>
+<li>el:是一个字符串或者DOM对象</li>
+<li>render: 是一个函数</li>
+<li>data<ul>
+<li>new Vue 是一个对象</li>
+<li>组件内 是一个函数，return一个对象</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="v-bind和v-on的简写形式"><a href="#v-bind和v-on的简写形式" class="headerlink" title="v-bind和v-on的简写形式"></a>v-bind和v-on的简写形式</h4><ul>
+<li>v-bind:属性名=”表达式”</li>
+<li>:属性名=”表达式”</li>
+<li>v-on:原生事件=”表达式||函数名”</li>
+<li>@原生事件=”函数名||表达式”<ul>
+<li>函数的调用，如果没有参数，可以省略小括号</li>
+</ul>
+</li>
+</ul>
+<h4 id="v-for的使用"><a href="#v-for的使用" class="headerlink" title="v-for的使用"></a>v-for的使用</h4><ul>
+<li>数组<code>v-for=&quot;(ele,index) in dataArr :key=&quot;index&quot; &quot;</code></li>
+<li>对象<code>v-for=&quot;(value,key,index) in dataObj :key=&quot;index&quot; &quot;</code></li>
+</ul>
+<h4 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h4><ul>
+<li>代码步骤<ul>
+<li>1:留坑 <code>div id=&quot;app&quot;</code></li>
+<li>2:引包</li>
+<li>3:创建主体组件,在全局中声明一个App,设置其options<ul>
+<li>options:  data/el/render/template/methods</li>
+<li>data 是一个函数,return一个对象</li>
+<li>render是一个函数,return一个DOM</li>
+<li>template是字符串或DOM对象</li>
+<li>methods是一个对象,key是函数名，value是函数体</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>一句心经<ul>
+<li>在template中使用vue的变量，不需要this.</li>
+<li>在methods或者别的行为中使用vue的变量，需要this.</li>
+</ul>
+</li>
+<li>指令<ul>
+<li>innerText v-text</li>
+<li>innerHTML v-html</li>
+<li>双向数据绑定 v-model</li>
+<li>元素是否存在 v-if  v-else(上一个兄弟节点有v-if 或者 v-else-if)</li>
+<li>元素是否显示 v-show</li>
+<li>绑定属性 v-bind:属性名=”表达式” 简写 :属性名=”表达式”</li>
+<li>绑定事件 v-on:属性名=”函数” 简写   @事件名=”表达式”</li>
+</ul>
+</li>
+<li>template中保证一个根节点（并不一定是div）</li>
+</ul>
+<h4 id="看文档的对象分类"><a href="#看文档的对象分类" class="headerlink" title="看文档的对象分类"></a>看文档的对象分类</h4><ul>
+<li>全局  Vue.</li>
+<li>选项 options ，可以存在与 单个组件和new Vue()中</li>
+<li>实例  vm:就是<code>var vm = new Vue()</code> ,   this:组件实例</li>
+<li>指令 v-开头</li>
+<li>特殊属性 比如 v-for 中的key</li>
+</ul>
+<h4 id="漂亮的列表"><a href="#漂亮的列表" class="headerlink" title="漂亮的列表"></a>漂亮的列表</h4><ul>
+<li>先设置一个对象列表<ul>
+<li>key:最终变量的值，value:样式名</li>
+<li>{A:’a’}[变量的值(A)]</li>
+</ul>
+</li>
+</ul>
+<h4 id="父子组件使用-父传子"><a href="#父子组件使用-父传子" class="headerlink" title="父子组件使用(父传子)"></a>父子组件使用(父传子)</h4><ul>
+<li><p>options 选项</p>
+<ul>
+<li>components 是一个对象，key是子组件名，值是子组件对象</li>
+</ul>
+</li>
+<li><p>父组件向子组件传递值</p>
+<ul>
+<li>父，指定某个属性值，给赋值就可以了 <code>xxx=&quot;父的值&quot;</code></li>
+<li>子,需要声明接受参数，props:[‘xxx’]</li>
+</ul>
+</li>
+</ul>
+<h4 id="创建全局组件"><a href="#创建全局组件" class="headerlink" title="创建全局组件"></a>创建全局组件</h4><ul>
+<li>但凡父用子，父要声明子 components</li>
+<li>全局注册全局组件，不用声明直接使用</li>
+<li><code>Vue.component(组件名,组件对象(options))</code></li>
+</ul>
+<h4 id="子向父组件通信（获取组件对象）-扩展"><a href="#子向父组件通信（获取组件对象）-扩展" class="headerlink" title="子向父组件通信（获取组件对象）(扩展)"></a>子向父组件通信（获取组件对象）(扩展)</h4><ul>
+<li>事件<ul>
+<li>1:先on</li>
+<li>2:再emit</li>
+<li>3:第一个参数名一致，保证是同一个频率</li>
+<li>4:要实现其功能需要同一个对象</li>
+</ul>
+</li>
+</ul>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/payment.jpg">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -190,73 +401,106 @@
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/06/16/vue第一天/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/06/16/first-title/" class="archive-article-date">
-  	<time datetime="2018-06-16T14:55:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-16</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2018/06/16/first-title/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">first title</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/06/16/first-title/">first title</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/05/07/hello-world/" class="archive-article-date">
-  	<time datetime="2018-05-07T09:11:56.066Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-07</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/05/07/hello-world/">Hello World</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
   
 
-    
+  
 
 
           </div>
@@ -279,8 +523,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
