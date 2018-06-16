@@ -151,6 +151,457 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-vue第三天" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/06/16/vue第三天/">vue第三天</a>
+    </h1>
+  
+
+        
+        <a href="/2018/06/16/vue第三天/" class="archive-article-date">
+  	<time datetime="2018-06-16T15:37:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-16</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="复习"><a href="#复习" class="headerlink" title="复习"></a>复习</h4><ul>
+<li>router基本步骤<ul>
+<li>1: 引入对象 <code>var VueRouter = require(&#39;vue-router.js&#39;);</code></li>
+<li>2: 安装插件 <code>Vue.use(VueRouter);</code><ul>
+<li>所有的this(VueComponent).$route/$router</li>
+</ul>
+</li>
+<li>3: 创建路由对象 <code>new VueRouter(options路由配置);</code></li>
+<li>4: <code>{ path:&#39;/xxx&#39; ,component:Xxx组件option}</code></li>
+<li>5: 将路由对象交给Vue实例 <code>new Vue({ router:router })</code></li>
+<li>6: 给component属性留坑 <code>&lt;router-view&gt;&lt;/router-view&gt;</code></li>
+</ul>
+</li>
+<li>生命周期<ul>
+<li>1: beforeCreate 和 created<ul>
+<li>beforeCreate 还未完成初始化</li>
+<li>created 已经完成初始化（数据观察||响应式），可以获取数据<ul>
+<li>this.xxx = xxx;  -&gt;  页面也显示不同的结果</li>
+<li>基于Object.defineProperty(data,’xxx’,{set:fn})</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>2: created和mounted<ul>
+<li>created 操作数据</li>
+<li>mounted 操作DOM</li>
+</ul>
+</li>
+<li>3: destroyed和active<ul>
+<li>销毁和停用，是一个类型，v-if=”false”触发</li>
+<li>激活和创建，是一个类型，v-if=”true”触发</li>
+<li>激活和停用结合内置组件keep-alive使用,频繁创建和销毁组件的时候<ul>
+<li>v-show</li>
+<li>插入和移除，在框架中还可以多一些过渡效果的行为</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>4:更改组件数据之后也会触发事件，但是这个知道就好，不常用</li>
+</ul>
+</li>
+</ul>
+<h4 id="今日重点"><a href="#今日重点" class="headerlink" title="今日重点"></a>今日重点</h4><ul>
+<li>路由<ul>
+<li>后端 : 请求 + URL 来去做判断</li>
+<li>前端 : 锚点值 来去做判断</li>
+</ul>
+</li>
+</ul>
+<h4 id="router-link"><a href="#router-link" class="headerlink" title="router-link"></a>router-link</h4><ul>
+<li>可以让我们不必担心锚点值的特殊标识<ul>
+<li>有的是 #/xxx做标识</li>
+<li>有的是 #!/xxx做标识</li>
+<li>而使用了router-link 只用保证 to属性内的值与路由规则的path一致即可</li>
+</ul>
+</li>
+<li>使用方式 <code>&lt;router-link to=&quot;/music&quot;&gt;电影&lt;/router-link&gt;</code></li>
+</ul>
+<h4 id="命名路由"><a href="#命名路由" class="headerlink" title="命名路由"></a>命名路由</h4><ul>
+<li>使用router-link<ul>
+<li>常规方式 <code>&lt;router-link to=&quot;/music&quot;&gt;电影&lt;/router-link&gt;</code></li>
+<li>命名方式 <code>&lt;router-link :to=&quot;{name:&#39;music&#39;}&quot; &gt;音乐&lt;/router-link&gt;</code></li>
+<li>注意: <strong>需要配置路由规则中有一个name叫做music的规则</strong></li>
+<li><code>{ name:&#39;music&#39;,path:&#39;/xxxx&#39;}</code></li>
+</ul>
+</li>
+<li>1:路由规则中 有name属性，:to指向这个对象，从而按规则的path生成href</li>
+</ul>
+<h4 id="参数router-link"><a href="#参数router-link" class="headerlink" title="参数router-link"></a>参数router-link</h4><ul>
+<li>查询字符串<ul>
+<li>1:操作(去哪里？)<ul>
+<li><code>&lt;router-link :to=&quot;{ name:&#39;bj&#39; ,query:{city:&#39;顺义&#39;}   }&quot;&gt;北京&lt;/router-link&gt;</code></li>
+</ul>
+</li>
+<li>2: 路由规则(怎么去)<ul>
+<li><code>{ name:&#39;bj&#39;, path:&#39;/beijing&#39; ,component:BeiJing}</code></li>
+</ul>
+</li>
+<li>3: 生成的效果<ul>
+<li><code>href=&quot;#/beijing?city=顺义&quot;</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>path的方式<ul>
+<li>1:操作(去哪里？)<ul>
+<li><code>&lt;router-link :to=&quot;{ name:&#39;bj&#39; ,params:{city:&#39;顺义&#39;}   }&quot;&gt;北京&lt;/router-link&gt;</code></li>
+</ul>
+</li>
+<li>2: 路由规则(怎么去)<ul>
+<li><code>{ name:&#39;bj&#39;, path:&#39;/beijing/:city&#39; ,component:BeiJing}</code></li>
+</ul>
+</li>
+<li>3: 生成的效果<ul>
+<li><code>href=&quot;#/beijing/顺义&quot;</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="vue-router中的对象"><a href="#vue-router中的对象" class="headerlink" title="vue-router中的对象"></a>vue-router中的对象</h4><ul>
+<li>路由信息对象 $route -&gt; 获取信息<ul>
+<li>$route, Vue.use(VueRouter) 来完成给this（组件对象挂载属性的）</li>
+<li>在所有的组件中就可以使用 this.$route获取这个对象</li>
+</ul>
+</li>
+<li>路由功能对象 $router -&gt; 操作（行为）</li>
+</ul>
+<h4 id="总结通过url传递参数"><a href="#总结通过url传递参数" class="headerlink" title="总结通过url传递参数"></a>总结通过url传递参数</h4><ul>
+<li>query的方式<ul>
+<li>1:操作(去哪里？)<ul>
+<li><code>&lt;router-link :to=&quot;{ name:&#39;bj&#39; ,params:{city:&#39;顺义&#39;}   }&quot;&gt;北京&lt;/router-link&gt;</code></li>
+</ul>
+</li>
+<li>2: 路由规则(怎么去,导航)<ul>
+<li><code>{ name:&#39;bj&#39;, path:&#39;/beijing/:city&#39; ,component:BeiJing}</code></li>
+</ul>
+</li>
+<li>3: 去了干嘛<ul>
+<li>created钩子函数：获取路由参数，发起ajax请求，把数据放到页面上</li>
+<li>查询字符串 <code>this.$route.query</code></li>
+<li>path方式 <code>this.$route.params</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="插件安装"><a href="#插件安装" class="headerlink" title="插件安装"></a>插件安装</h4><ul>
+<li>所有Vue相关的插件必须要实现install函数，在Vue.use的时候，会把Vue对象传递到install函数中，从而可以给Vue的原型挂载属性，让继承于Vue的各个组件对象都有该属性</li>
+</ul>
+<h4 id="多视图-命名视图"><a href="#多视图-命名视图" class="headerlink" title="多视图(命名视图)"></a>多视图(命名视图)</h4><ul>
+<li>更为灵活的维护，灵活的配置修改显示的效果</li>
+<li>多个router-view 更灵活</li>
+<li>components属性是一个对象 key(坑名),value(组件)</li>
+</ul>
+<h4 id="嵌套路由"><a href="#嵌套路由" class="headerlink" title="嵌套路由"></a>嵌套路由</h4><ul>
+<li>router-view 包含router-view</li>
+<li>路由中包含子路由</li>
+<li>每个路由都映射组件<ul>
+<li>子路由path:  绝对路径/xxx，那访问就是这个路径 /xxx</li>
+<li>相对路径 xxx  ,访问则是父路由路径 /home/xxx</li>
+</ul>
+</li>
+<li>路由对象中加入children:[路由规则]</li>
+</ul>
+<h4 id="重定向及404"><a href="#重定向及404" class="headerlink" title="重定向及404"></a>重定向及404</h4><ul>
+<li>重定向在路由规则中 <code>{ path:&#39;/&#39;,redirect:{name:&#39;xxxx&#39;}  }</code></li>
+<li>404 在规则的最后<code>path:&#39;*&#39;,component:Xxxx</code></li>
+</ul>
+<h4 id="编程式导航"><a href="#编程式导航" class="headerlink" title="编程式导航"></a>编程式导航</h4><ul>
+<li>js代码 -&gt; 导航的能力 -&gt; 页面数据变更</li>
+<li>router-link 用户来点击，页面数据变更</li>
+<li>跳转:<code>this.$router.push(路由对象{name:&#39;xx&#39;})</code></li>
+<li>根据历史记录前进后退 <code>this.$router.go(-1||1);</code></li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">vue</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/06/16/vue第三天/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-vue第二天" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/06/16/vue第二天/">vue第二天</a>
+    </h1>
+  
+
+        
+        <a href="/2018/06/16/vue第二天/" class="archive-article-date">
+  	<time datetime="2018-06-16T15:30:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-16</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="复习"><a href="#复习" class="headerlink" title="复习"></a>复习</h4><ul>
+<li>vue的 启动步骤<ul>
+<li>1: index.html  在之中留坑 div id=”app”<ul>
+<li>在vue1中可以在body，html中声明id=”app”</li>
+<li>在vue2.x中不可以将原生声明为body或者html标签</li>
+</ul>
+</li>
+<li>2: 引包，启动vue(new Vue的实例)</li>
+<li>3: 将options作为vue构造的参数</li>
+<li>4: 声明组件组件对象(options)</li>
+</ul>
+</li>
+<li><p>options</p>
+<ul>
+<li>el DOM的目的地</li>
+<li>template: 组件模板</li>
+<li>data: 组件的数据</li>
+<li>methods: 是一个对象 </li>
+<li>render： c=&gt;c(App)     c是形参，代表着vue提供的根据options创建组件的DOM方式</li>
+<li>components: 声明子组件</li>
+<li>props:是一个数组</li>
+</ul>
+</li>
+<li><p>data 是一个函数，return 一个对象</p>
+</li>
+<li>methods 是一个对象，key是函数名,value是函数体<ul>
+<li>内部使用data的变量，需要加上this……vue处理了this的指向</li>
+<li>在js中使用到this.xxx  在template中就可以直接使用</li>
+</ul>
+</li>
+<li>components 组件内声明，是一个对象，key 是组件名，value是组件的options对象<ul>
+<li>全局组件 Vue.component(组件名,组件的options)</li>
+</ul>
+</li>
+</ul>
+<h4 id="今日重点"><a href="#今日重点" class="headerlink" title="今日重点"></a>今日重点</h4><ul>
+<li>路由插件</li>
+</ul>
+<h4 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h4><ul>
+<li>全局API，Vue.</li>
+<li>Vue.component/Vue.filter</li>
+</ul>
+<h4 id="监视watch"><a href="#监视watch" class="headerlink" title="监视watch"></a>监视watch</h4><ul>
+<li><p>更改内存中js变量的值，影响着别的地方，做一些行为</p>
+<ul>
+<li>options: watch是一个对象<ul>
+<li>key 是要监视的变量,value 是一个function(newV,oldV){ 做一些行为}</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>在vue中也存在对于对象的深度监视</p>
+<ul>
+<li>watch:对象,变量名,valueFn  <ul>
+<li>参数是newV,oldV</li>
+</ul>
+</li>
+<li>深度监视<ul>
+<li>watch:{  变量名:{deep:true,handler:valueFn}      }</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="计算属性-options-gt-computed"><a href="#计算属性-options-gt-computed" class="headerlink" title="计算属性(options-&gt;computed)"></a>计算属性(options-&gt;computed)</h4><ul>
+<li>需求: 做一个计算器，num1 + num2 * rate = 结果<ul>
+<li>input num1,num2,rate, result<ul>
+<li>情况1: 通过某些按钮，而不是直接更改num1的输入框的值，来改变num1的值</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>计算属性中使用到this.的变量更改后会触发函数的执行，从而重新计算，return作为显示的值，注意:如果原值未发生改变，则不触发该函数</strong></li>
+</ul>
+<h4 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h4><ul>
+<li>计算属性和watch的区别<ul>
+<li>多个监视和一个监视的区别</li>
+</ul>
+</li>
+<li>和普通输出是一样<code></code></li>
+<li>options<ul>
+<li>模板数据的目的地: el</li>
+<li>根据options-&gt; App 渲染到目的地 : render函数</li>
+<li>数据 data,是一个函数，return一个对象</li>
+<li>组件的方法 methods ，是一个对象 ，key是函数名，value是函数体</li>
+<li>接收父组件的参数 props, 是一个数组。元素是字符串</li>
+<li>组件内声明组件 components 是一个对象 key是组件名,value就是options(组件的)</li>
+<li>过滤器 filters 是一个对象 key是过滤器名，value是过滤器方式fn</li>
+<li>监视单个 watch 是一个对象 key是监视的变量名，value方式fn</li>
+<li>计算属性 computed 是一个对象 key计算名,value是方式fn return 是返回的内容</li>
+</ul>
+</li>
+</ul>
+<h4 id="获取元素"><a href="#获取元素" class="headerlink" title="获取元素"></a>获取元素</h4><ul>
+<li>在元素上声明ref=”xxx”</li>
+<li>获取这个DOM元素 <code>this.$refs.xxx</code></li>
+</ul>
+<h4 id="事件回调函数-钩子函数-总结"><a href="#事件回调函数-钩子函数-总结" class="headerlink" title="事件回调函数(钩子函数) 总结"></a>事件回调函数(钩子函数) 总结</h4><ul>
+<li>beforeCreated和created的注意事项  <ul>
+<li>beforeCreated 还未完成数据的初始化，不能操作数据</li>
+</ul>
+</li>
+<li>created 和mounted的注意事项<ul>
+<li>created 还未生成DOM （应用场景，在真正生成DOM 前，去获取数据，等待mounted装载到DOM中）（操作数据）</li>
+<li>mounted 已经根据data和template生成了DOM，可以获取或者修改DOM</li>
+</ul>
+</li>
+<li><p>created操作和获取数据，mounted操作和获取DOM</p>
+</li>
+<li><p>actived和deactivated是结合keep-alive（vue内部的组件）使用的，</p>
+<ul>
+<li>频繁的插入和移除组件，vue将其缓存起来，不频繁创建和移除</li>
+<li>有停用(相当于以前的destroyed)和激活(相当于created)的两种状态</li>
+</ul>
+</li>
+</ul>
+<h4 id="复习-1"><a href="#复习-1" class="headerlink" title="复习"></a>复习</h4><ul>
+<li>钩子： 事件回调函数</li>
+<li>Vue中给你在执行流程(vue生命周期)开放了一些方式，来完成你的代码</li>
+<li>created 操作数据</li>
+<li>mounted 装载数据之后，操作DOM</li>
+<li>关于更新前后的钩子，建议使用computed来完成</li>
+<li>watch 监视单个data的属性 ，遇到对象的属性或者元素需要监视，就需要深度监视<ul>
+<li>deep:true ,handler:fn</li>
+</ul>
+</li>
+<li>computed 监视在函数内使用到的this相关的属性</li>
+</ul>
+<h4 id="利用webpack-完成模块化打包"><a href="#利用webpack-完成模块化打包" class="headerlink" title="利用webpack 完成模块化打包"></a>利用webpack 完成模块化打包</h4><ul>
+<li>1:全局安装webpack <code>npm i -g webpack</code></li>
+<li>2:打开当前命令行 </li>
+</ul>
+<h4 id="总结结合webpack打包"><a href="#总结结合webpack打包" class="headerlink" title="总结结合webpack打包"></a>总结结合webpack打包</h4><ul>
+<li>1:从main.js中 启动vue</li>
+<li>2:通过require引入相关依赖 vue,App</li>
+<li>3:编写App.js  以module.exports方式向外导出</li>
+<li>4:检查App.js中有没有依赖，require, 结合module.exports</li>
+<li>5:执行命令 <code>webpack ./main.js ./build.js</code></li>
+<li>6:在index.html中引入build.js</li>
+</ul>
+<h4 id="基本使用"><a href="#基本使用" class="headerlink" title="基本使用"></a>基本使用</h4><ul>
+<li>vue中核心插件之一  vue-router</li>
+<li>1:下载vue-router</li>
+<li>2:引入vue-router(require)</li>
+<li>3:创建路由对象 new VueRouter();</li>
+<li>4:配置路由规则,在路由对象的构造中完成 routes:[ path:锚点值路径,component:显示的组件]</li>
+<li>5:安装插件</li>
+<li>6:将其加入到new Vue中</li>
+<li>7:留坑</li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">vue</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/06/16/vue第二天/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-vue第一天" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -362,17 +813,6 @@
     <div class="article-info article-info-index">
       
       
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">vue</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
       
 
       

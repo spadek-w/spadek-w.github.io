@@ -6,16 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives | 妖怪</title>
+  <title>vue第三天 | 妖怪</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="keywords" content="前端,js,jquery,javascript,html5,css3">
-<meta property="og:type" content="website">
-<meta property="og:title" content="妖怪">
-<meta property="og:url" content="http://yoursite.com/archives/index.html">
+  <meta name="description" content="复习 router基本步骤 1: 引入对象 var VueRouter = require(&amp;#39;vue-router.js&amp;#39;); 2: 安装插件 Vue.use(VueRouter); 所有的this(VueComponent).$route/$router   3: 创建路由对象 new VueRouter(options路由配置); 4: { path:&amp;#39;/xxx&amp;#39">
+<meta name="keywords" content="vue">
+<meta property="og:type" content="article">
+<meta property="og:title" content="vue第三天">
+<meta property="og:url" content="http://yoursite.com/2018/06/16/vue第三天/index.html">
 <meta property="og:site_name" content="妖怪">
+<meta property="og:description" content="复习 router基本步骤 1: 引入对象 var VueRouter = require(&amp;#39;vue-router.js&amp;#39;); 2: 安装插件 Vue.use(VueRouter); 所有的this(VueComponent).$route/$router   3: 创建路由对象 new VueRouter(options路由配置); 4: { path:&amp;#39;/xxx&amp;#39">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-06-16T15:38:39.581Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="妖怪">
+<meta name="twitter:title" content="vue第三天">
+<meta name="twitter:description" content="复习 router基本步骤 1: 引入对象 var VueRouter = require(&amp;#39;vue-router.js&amp;#39;); 2: 安装插件 Vue.use(VueRouter); 所有的this(VueComponent).$route/$router   3: 创建路由对象 new VueRouter(options路由配置); 4: { path:&amp;#39;/xxx&amp;#39">
   
     <link rel="alternative" href="/atom.xml" title="妖怪" type="application/atom+xml">
   
@@ -149,36 +153,215 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-vue第三天" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      vue第三天
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/06/16/vue第三天/" class="archive-article-date">
+
+        
+        <a href="/2018/06/16/vue第三天/" class="archive-article-date">
   	<time datetime="2018-06-16T15:37:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-16</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/06/16/vue第三天/">vue第三天</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="复习"><a href="#复习" class="headerlink" title="复习"></a>复习</h4><ul>
+<li>router基本步骤<ul>
+<li>1: 引入对象 <code>var VueRouter = require(&#39;vue-router.js&#39;);</code></li>
+<li>2: 安装插件 <code>Vue.use(VueRouter);</code><ul>
+<li>所有的this(VueComponent).$route/$router</li>
+</ul>
+</li>
+<li>3: 创建路由对象 <code>new VueRouter(options路由配置);</code></li>
+<li>4: <code>{ path:&#39;/xxx&#39; ,component:Xxx组件option}</code></li>
+<li>5: 将路由对象交给Vue实例 <code>new Vue({ router:router })</code></li>
+<li>6: 给component属性留坑 <code>&lt;router-view&gt;&lt;/router-view&gt;</code></li>
+</ul>
+</li>
+<li>生命周期<ul>
+<li>1: beforeCreate 和 created<ul>
+<li>beforeCreate 还未完成初始化</li>
+<li>created 已经完成初始化（数据观察||响应式），可以获取数据<ul>
+<li>this.xxx = xxx;  -&gt;  页面也显示不同的结果</li>
+<li>基于Object.defineProperty(data,’xxx’,{set:fn})</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>2: created和mounted<ul>
+<li>created 操作数据</li>
+<li>mounted 操作DOM</li>
+</ul>
+</li>
+<li>3: destroyed和active<ul>
+<li>销毁和停用，是一个类型，v-if=”false”触发</li>
+<li>激活和创建，是一个类型，v-if=”true”触发</li>
+<li>激活和停用结合内置组件keep-alive使用,频繁创建和销毁组件的时候<ul>
+<li>v-show</li>
+<li>插入和移除，在框架中还可以多一些过渡效果的行为</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>4:更改组件数据之后也会触发事件，但是这个知道就好，不常用</li>
+</ul>
+</li>
+</ul>
+<h4 id="今日重点"><a href="#今日重点" class="headerlink" title="今日重点"></a>今日重点</h4><ul>
+<li>路由<ul>
+<li>后端 : 请求 + URL 来去做判断</li>
+<li>前端 : 锚点值 来去做判断</li>
+</ul>
+</li>
+</ul>
+<h4 id="router-link"><a href="#router-link" class="headerlink" title="router-link"></a>router-link</h4><ul>
+<li>可以让我们不必担心锚点值的特殊标识<ul>
+<li>有的是 #/xxx做标识</li>
+<li>有的是 #!/xxx做标识</li>
+<li>而使用了router-link 只用保证 to属性内的值与路由规则的path一致即可</li>
+</ul>
+</li>
+<li>使用方式 <code>&lt;router-link to=&quot;/music&quot;&gt;电影&lt;/router-link&gt;</code></li>
+</ul>
+<h4 id="命名路由"><a href="#命名路由" class="headerlink" title="命名路由"></a>命名路由</h4><ul>
+<li>使用router-link<ul>
+<li>常规方式 <code>&lt;router-link to=&quot;/music&quot;&gt;电影&lt;/router-link&gt;</code></li>
+<li>命名方式 <code>&lt;router-link :to=&quot;{name:&#39;music&#39;}&quot; &gt;音乐&lt;/router-link&gt;</code></li>
+<li>注意: <strong>需要配置路由规则中有一个name叫做music的规则</strong></li>
+<li><code>{ name:&#39;music&#39;,path:&#39;/xxxx&#39;}</code></li>
+</ul>
+</li>
+<li>1:路由规则中 有name属性，:to指向这个对象，从而按规则的path生成href</li>
+</ul>
+<h4 id="参数router-link"><a href="#参数router-link" class="headerlink" title="参数router-link"></a>参数router-link</h4><ul>
+<li>查询字符串<ul>
+<li>1:操作(去哪里？)<ul>
+<li><code>&lt;router-link :to=&quot;{ name:&#39;bj&#39; ,query:{city:&#39;顺义&#39;}   }&quot;&gt;北京&lt;/router-link&gt;</code></li>
+</ul>
+</li>
+<li>2: 路由规则(怎么去)<ul>
+<li><code>{ name:&#39;bj&#39;, path:&#39;/beijing&#39; ,component:BeiJing}</code></li>
+</ul>
+</li>
+<li>3: 生成的效果<ul>
+<li><code>href=&quot;#/beijing?city=顺义&quot;</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>path的方式<ul>
+<li>1:操作(去哪里？)<ul>
+<li><code>&lt;router-link :to=&quot;{ name:&#39;bj&#39; ,params:{city:&#39;顺义&#39;}   }&quot;&gt;北京&lt;/router-link&gt;</code></li>
+</ul>
+</li>
+<li>2: 路由规则(怎么去)<ul>
+<li><code>{ name:&#39;bj&#39;, path:&#39;/beijing/:city&#39; ,component:BeiJing}</code></li>
+</ul>
+</li>
+<li>3: 生成的效果<ul>
+<li><code>href=&quot;#/beijing/顺义&quot;</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="vue-router中的对象"><a href="#vue-router中的对象" class="headerlink" title="vue-router中的对象"></a>vue-router中的对象</h4><ul>
+<li>路由信息对象 $route -&gt; 获取信息<ul>
+<li>$route, Vue.use(VueRouter) 来完成给this（组件对象挂载属性的）</li>
+<li>在所有的组件中就可以使用 this.$route获取这个对象</li>
+</ul>
+</li>
+<li>路由功能对象 $router -&gt; 操作（行为）</li>
+</ul>
+<h4 id="总结通过url传递参数"><a href="#总结通过url传递参数" class="headerlink" title="总结通过url传递参数"></a>总结通过url传递参数</h4><ul>
+<li>query的方式<ul>
+<li>1:操作(去哪里？)<ul>
+<li><code>&lt;router-link :to=&quot;{ name:&#39;bj&#39; ,params:{city:&#39;顺义&#39;}   }&quot;&gt;北京&lt;/router-link&gt;</code></li>
+</ul>
+</li>
+<li>2: 路由规则(怎么去,导航)<ul>
+<li><code>{ name:&#39;bj&#39;, path:&#39;/beijing/:city&#39; ,component:BeiJing}</code></li>
+</ul>
+</li>
+<li>3: 去了干嘛<ul>
+<li>created钩子函数：获取路由参数，发起ajax请求，把数据放到页面上</li>
+<li>查询字符串 <code>this.$route.query</code></li>
+<li>path方式 <code>this.$route.params</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="插件安装"><a href="#插件安装" class="headerlink" title="插件安装"></a>插件安装</h4><ul>
+<li>所有Vue相关的插件必须要实现install函数，在Vue.use的时候，会把Vue对象传递到install函数中，从而可以给Vue的原型挂载属性，让继承于Vue的各个组件对象都有该属性</li>
+</ul>
+<h4 id="多视图-命名视图"><a href="#多视图-命名视图" class="headerlink" title="多视图(命名视图)"></a>多视图(命名视图)</h4><ul>
+<li>更为灵活的维护，灵活的配置修改显示的效果</li>
+<li>多个router-view 更灵活</li>
+<li>components属性是一个对象 key(坑名),value(组件)</li>
+</ul>
+<h4 id="嵌套路由"><a href="#嵌套路由" class="headerlink" title="嵌套路由"></a>嵌套路由</h4><ul>
+<li>router-view 包含router-view</li>
+<li>路由中包含子路由</li>
+<li>每个路由都映射组件<ul>
+<li>子路由path:  绝对路径/xxx，那访问就是这个路径 /xxx</li>
+<li>相对路径 xxx  ,访问则是父路由路径 /home/xxx</li>
+</ul>
+</li>
+<li>路由对象中加入children:[路由规则]</li>
+</ul>
+<h4 id="重定向及404"><a href="#重定向及404" class="headerlink" title="重定向及404"></a>重定向及404</h4><ul>
+<li>重定向在路由规则中 <code>{ path:&#39;/&#39;,redirect:{name:&#39;xxxx&#39;}  }</code></li>
+<li>404 在规则的最后<code>path:&#39;*&#39;,component:Xxxx</code></li>
+</ul>
+<h4 id="编程式导航"><a href="#编程式导航" class="headerlink" title="编程式导航"></a>编程式导航</h4><ul>
+<li>js代码 -&gt; 导航的能力 -&gt; 页面数据变更</li>
+<li>router-link 用户来点击，页面数据变更</li>
+<li>跳转:<code>this.$router.push(路由对象{name:&#39;xx&#39;})</code></li>
+<li>根据历史记录前进后退 <code>this.$router.go(-1||1);</code></li>
+</ul>
 
-        <div class="article-info info-on-right">
-          
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/payment.jpg">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -190,138 +373,106 @@
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/06/16/vue第三天/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/06/16/vue第二天/" class="archive-article-date">
-  	<time datetime="2018-06-16T15:30:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-16</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2018/06/16/vue第二天/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">vue第二天</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/06/16/vue第二天/">vue第二天</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">vue</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/06/16/vue第一天/" class="archive-article-date">
-  	<time datetime="2018-06-16T15:24:38.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-16</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/06/16/vue第一天/">vue第一天</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/06/16/first-title/" class="archive-article-date">
-  	<time datetime="2018-06-16T14:55:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-16</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/06/16/first-title/">first title</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/05/07/hello-world/" class="archive-article-date">
-  	<time datetime="2018-05-07T09:11:56.066Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-07</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/05/07/hello-world/">Hello World</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
 
 
           </div>
@@ -344,8 +495,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
