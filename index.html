@@ -151,29 +151,245 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-无聊瞎搞" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-vue第四天" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/06/16/无聊瞎搞/">无聊瞎搞</a>
+      <a class="article-title" href="/2018/07/05/vue第四天/">vue第四天</a>
     </h1>
   
 
         
-        <a href="/2018/06/16/无聊瞎搞/" class="archive-article-date">
-  	<time datetime="2018-06-16T15:52:08.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-16</time>
+        <a href="/2018/07/05/vue第四天/" class="archive-article-date">
+  	<time datetime="2018-07-05T14:30:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-05</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="论述”石利龙”"><a href="#论述”石利龙”" class="headerlink" title="论述”石利龙”"></a>论述”石利龙”</h2><pre><code>* 石利龙  男  24岁 有房有车 找一个小哥哥
-* 武杰    男  23岁 有房有车 找一个小姐姐
-</code></pre>
+        <h4 id="复习"><a href="#复习" class="headerlink" title="复习"></a>复习</h4><ul>
+<li>基本使用步骤<ul>
+<li>1：引入对象</li>
+<li>2: 安装插件（挂载属性、注册全局组件）</li>
+<li>3: 创建路由对象配置路由规则</li>
+<li>4: 把路由对象交给vue的实例</li>
+<li>5: 留坑<code>&lt;router-view&gt;&lt;/router-view&gt;</code></li>
+</ul>
+</li>
+<li>a 标签来传递参数<ul>
+<li>组件router-link </li>
+<li>to 让我们不必关心锚点值标记,给一个url</li>
+</ul>
+</li>
+<li>命名路由<ul>
+<li>查询字符串<ul>
+<li>1: 去哪里<ul>
+<li><code>&lt;router-link :to=&quot;{ name:&#39;bj&#39;,query:{id:&#39;1&#39;} }&quot;</code></li>
+</ul>
+</li>
+<li>2: 导航<ul>
+<li><code>{ name:&#39;bj&#39;,path:&#39;/beijing&#39;,component:Beijing  }</code></li>
+</ul>
+</li>
+<li>3: 去了干嘛<ul>
+<li>获取路由参数 <code>this.$route.query.id</code></li>
+<li>生成a标签的href=”#/beijing”</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>path的方式<ul>
+<li>1: 去哪里<ul>
+<li><code>&lt;router-link :to=&quot;{ name:&#39;bj&#39;,params:{mid:&#39;1&#39;} }&quot;</code></li>
+</ul>
+</li>
+<li>2: 导航<ul>
+<li><code>{ name:&#39;bj&#39;,path:&#39;/beijing/:mid&#39;,component:Beijing  }</code></li>
+</ul>
+</li>
+<li>3: 去了干嘛<ul>
+<li>获取路由参数 <code>this.$route.params.mid</code></li>
+<li>生成a标签的href=”#/beijing/1”</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>对于参数传递是否带引号的问题<ul>
+<li>常量字符串 加上单引号</li>
+<li>数字、变量不加单引号</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p>多视图</p>
+<ul>
+<li>一次填入多个坑，灵活，并且将控制从业务逻辑代码，转移到了配置区</li>
+<li>1: 路由匹配有一个属性 components:{ 坑名:组件  }</li>
+<li>2: 当前匹配锚点值后，先有的组件 App主体部分，存在这些坑</li>
+<li>总结: router-view的数量要和组件所对应</li>
+<li>当锚点值一匹配，触发三个组件，填入三个坑</li>
+<li>坑名 <code>&lt;router-view name=&quot;xxx&quot;&gt;&lt;/router-view&gt;</code></li>
+</ul>
+</li>
+<li><p>嵌套路由</p>
+<ul>
+<li>嵌套路由可以用来完成多页应用</li>
+<li>父路由 <ul>
+<li>path匹配 组件显示（包含视图）</li>
+</ul>
+</li>
+<li>子路由 1对1  path匹配，显示组件</li>
+<li>Home组件中 <router-view>  用来显示子路由的视图</router-view></li>
+<li>{ path:’/home’,component:Home ,children:[{ path:’music’,conponent:Music }]    }</li>
+<li>名称个不相关,建议子路由 叫父路由.xxx</li>
+</ul>
+</li>
+<li><p>404 和重定向</p>
+</li>
+<li>重定向写在上面 404 写在最后<ul>
+<li><code>{  path:&#39;/&#39;,redirect:{name:&#39;home&#39;}   }</code></li>
+<li><code>{  path:&#39;*&#39;, component:NotFound }</code></li>
+</ul>
+</li>
+<li>编程导航<ul>
+<li>锚点值改变页面改变<ul>
+<li><code>this.$router.push( { name:&#39;list&#39; }  );</code></li>
+</ul>
+</li>
+<li>根据浏览器历史记录前进和后退<ul>
+<li><code>this.$router.go(-1||1)</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="今日重点"><a href="#今日重点" class="headerlink" title="今日重点"></a>今日重点</h4><h4 id="历史介绍"><a href="#历史介绍" class="headerlink" title="历史介绍"></a>历史介绍</h4><ul>
+<li>2009年初，commonjs规范还未出来，此时前端开发人员编写的代码都是非模块化的，<ul>
+<li>那个时候开发人员经常需要十分留意文件加载顺序所带来的依赖问题</li>
+</ul>
+</li>
+<li>与此同时 nodejs开启了js全栈大门，而requirejs在国外也带动着前端逐步实现模块化<ul>
+<li>同时国内seajs也进行了大力推广</li>
+<li>AMD 规范 ，具体实现是requirejs define(‘模块id’,[模块依赖1,模块依赖2],function(){  return ;}) , ajax请求文件并加载</li>
+<li>Commonjs || CMD 规范 seajs 淘宝玉伯<ul>
+<li>commonjs和cmd非常相似的<ul>
+<li>cmd  require/module.exports</li>
+</ul>
+</li>
+<li>commonjs是js在后端语言的规范: 模块、文件操作、操作系统底层</li>
+<li>CMD 仅仅是模块定义</li>
+</ul>
+</li>
+<li>UMD 通用模块定义，一种既能兼容amd也能兼容commonjs 也能兼容浏览器环境运行的万能代码</li>
+</ul>
+</li>
+<li>npm/bower集中包管理的方式备受青睐，12年browserify/webpack诞生<ul>
+<li>npm 是可以下载前后端的js代码475000个包</li>
+<li>bower 只能下载前端的js代码,bower 在下载bootstrap的时候会自动的下载jquery</li>
+<li>browserify 解决让require可以运行在浏览器，分析require的关系，组装代码</li>
+<li>webpack 打包工具，占市场主流</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">(<span class="function"><span class="keyword">function</span> (<span class="params">root, factory</span>) </span>&#123;  </span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">typeof</span> exports === <span class="string">'object'</span>) &#123; </span><br><span class="line">        <span class="built_in">module</span>.exports = factory();  <span class="comment">//commonjs环境下能拿到返回值</span></span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (<span class="keyword">typeof</span> define === <span class="string">'function'</span> ) &#123;  </span><br><span class="line">        define(factory);   <span class="comment">//define(function()&#123;return 'a'&#125;)  AMD</span></span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;  </span><br><span class="line">        <span class="built_in">window</span>.eventUtil = factory();  </span><br><span class="line">    &#125;  </span><br><span class="line">&#125;)(<span class="keyword">this</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;  </span><br><span class="line">    <span class="comment">// module  </span></span><br><span class="line">    <span class="keyword">return</span> &#123;  </span><br><span class="line">        <span class="comment">//具体模块代码</span></span><br><span class="line">        addEvent: <span class="function"><span class="keyword">function</span>(<span class="params">el, type, handle</span>) </span>&#123;  </span><br><span class="line">            <span class="comment">//...  </span></span><br><span class="line">        &#125;,  </span><br><span class="line">        removeEvent: <span class="function"><span class="keyword">function</span>(<span class="params">el, type, handle</span>) </span>&#123;  </span><br><span class="line">              </span><br><span class="line">        &#125;,  </span><br><span class="line">    &#125;;  </span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h4 id="webpack打包模块的源码"><a href="#webpack打包模块的源码" class="headerlink" title="webpack打包模块的源码"></a>webpack打包模块的源码</h4><ul>
+<li>1:把所有模块的代码放入到函数中，用一个数组保存起来</li>
+<li>2:根据require时传入的数组索引，能知道需要哪一段代码</li>
+<li>3:从数组中，根据索引取出包含我们代码的函数</li>
+<li>4:执行该函数，传入一个对象 module.exports</li>
+<li>5:我们的代码，按照约定，正好是用module.exports = ‘xxxx’ 进行赋值</li>
+<li>6:调用函数结束后，module.exports从原来的空对象，就有值了</li>
+<li>7:最终return module.exports; 作为require函数的返回值</li>
+</ul>
+<h4 id="webpack配置文件"><a href="#webpack配置文件" class="headerlink" title="webpack配置文件"></a>webpack配置文件</h4><ul>
+<li>在当前命令行的目录中，创建一个webpack.config.js文件</li>
+<li>由于webpack是基于node,配置文件中的写法参照commonjs的模块导出</li>
+</ul>
+<h4 id="webpack-config-js文件配置（认识）"><a href="#webpack-config-js文件配置（认识）" class="headerlink" title="webpack.config.js文件配置（认识）"></a>webpack.config.js文件配置（认识）</h4><ul>
+<li>entry 是一个对象，程序的入口<ul>
+<li>key:随意写</li>
+<li>value: 入口文件</li>
+</ul>
+</li>
+<li>output 是一个对象,产出的资源<ul>
+<li>key: filename</li>
+<li>value : 生成的build.js</li>
+</ul>
+</li>
+<li>module 模块（对象）<ul>
+<li>loaders:[]<ul>
+<li>存在一些loader   <code>{ test:正则,loader:&#39;style-loader!css-loader&#39;    }</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="npm2-5以前"><a href="#npm2-5以前" class="headerlink" title="npm2.5以前"></a>npm2.5以前</h4><ul>
+<li>各个包内包含node_modules,会导致目录层级很深，有些包下载的时候就会报错</li>
+<li>npm2.5以后，安装的依赖包，就全部都是在平级根目录</li>
+</ul>
+<h4 id="处理css"><a href="#处理css" class="headerlink" title="处理css"></a>处理css</h4><ul>
+<li>require(‘./xxx.css’);</li>
+</ul>
+<h4 id="处理less"><a href="#处理less" class="headerlink" title="处理less"></a>处理less</h4><ul>
+<li><code>loader:&#39;style-loader!css-loader!less-loader&#39;</code></li>
+</ul>
+<h4 id="处理ES6"><a href="#处理ES6" class="headerlink" title="处理ES6"></a>处理ES6</h4><ul>
+<li>babel是一个语法转换器,可以单独使用，也可以给打包工具结合起来使用</li>
+<li>webpack  -&gt; babel-loader</li>
+<li>browserify -&gt; babelify</li>
+<li>可以转换es6/es7/react -&gt; es5</li>
+<li>设置当前语法: preset(预设)  es2015</li>
+<li>下载预设<ul>
+<li>babel-loader + babel-preset-env(es2015/2016/2017)</li>
+</ul>
+</li>
+<li>babel默认只转换语法部分 关键字 </li>
+<li>函数部分需要插件支持</li>
+</ul>
+<h4 id="处理文件-base64"><a href="#处理文件-base64" class="headerlink" title="处理文件 + base64"></a>处理文件 + base64</h4><ul>
+<li>url-loader 可以将文件生成为base64编码，到build.js中</li>
+<li>文件在base64加密后会比原来大三分之一</li>
+<li>应用场景是比较小的图片 4kb以内的图片</li>
+</ul>
+<h4 id="特殊符号"><a href="#特殊符号" class="headerlink" title="特殊符号"></a>特殊符号</h4><ul>
+<li>! 分隔多个loader</li>
+<li>字符串后跟上? 参数   key=value&amp;key=value</li>
+<li>对象: options:{ key:value,key:value  }</li>
+</ul>
+<h4 id="字符串内使用的内置变量"><a href="#字符串内使用的内置变量" class="headerlink" title="字符串内使用的内置变量"></a>字符串内使用的内置变量</h4><ul>
+<li>name: <code>[name].[ext]</code></li>
+<li>name是获取原文件名,ext是获取原文件名的后缀</li>
+<li>output:{   path:’绝对路径’, //设置产出的资源目录 ,filename:’build.js’}</li>
+</ul>
+<h4 id="处理html"><a href="#处理html" class="headerlink" title="处理html"></a>处理html</h4><ul>
+<li>html-webpack-plugin</li>
+<li>1:下载</li>
+<li>2:在webpack.config.js文件中引入</li>
+<li>3:plugins属性中，配置该对象</li>
+<li>4:给其options设置template（参照物）</li>
+</ul>
+<h4 id="单文件方式"><a href="#单文件方式" class="headerlink" title="单文件方式"></a>单文件方式</h4><ul>
+<li>依赖 vue-loader</li>
+<li>vue-template-compiler</li>
+</ul>
+<h4 id="webpack-dev-server"><a href="#webpack-dev-server" class="headerlink" title="webpack-dev-server"></a>webpack-dev-server</h4><h4 id="mint-ui"><a href="#mint-ui" class="headerlink" title="mint-ui"></a>mint-ui</h4><ul>
+<li>移动端组件库</li>
+<li><a href="https://mint-ui.github.io/docs/#/zh-cn2" target="_blank" rel="noopener">https://mint-ui.github.io/docs/#/zh-cn2</a></li>
+<li>DEMO: mint-ui-master\example\pages</li>
+</ul>
+<h4 id="vue-rerource-了解"><a href="#vue-rerource-了解" class="headerlink" title="vue-rerource(了解)"></a>vue-rerource(了解)</h4><h4 id="axios"><a href="#axios" class="headerlink" title="axios"></a>axios</h4><ul>
+<li><a href="https://segmentfault.com/a/1190000008470355?utm_source=tuicool&amp;utm_medium=referral" target="_blank" rel="noopener">https://segmentfault.com/a/1190000008470355?utm_source=tuicool&amp;utm_medium=referral</a></li>
+</ul>
+<h4 id="options"><a href="#options" class="headerlink" title="options"></a>options</h4><h4 id="拦截器"><a href="#拦截器" class="headerlink" title="拦截器"></a>拦截器</h4><h4 id="拦截器应用场景"><a href="#拦截器应用场景" class="headerlink" title="拦截器应用场景"></a>拦截器应用场景</h4><h4 id="合并请求"><a href="#合并请求" class="headerlink" title="合并请求"></a>合并请求</h4>
       
 
       
@@ -181,11 +397,22 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">vue</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2018/06/16/无聊瞎搞/">展开全文 >></a>
+          <a class="article-more-a" href="/2018/07/05/vue第四天/">展开全文 >></a>
         </p>
       
 

@@ -6,20 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>vue第三天 | 妖怪</title>
+  <title>vue第四天 | 妖怪</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="复习 router基本步骤 1: 引入对象 var VueRouter = require(&amp;#39;vue-router.js&amp;#39;); 2: 安装插件 Vue.use(VueRouter); 所有的this(VueComponent).$route/$router   3: 创建路由对象 new VueRouter(options路由配置); 4: { path:&amp;#39;/xxx&amp;#39">
+  <meta name="description" content="复习 基本使用步骤 1：引入对象 2: 安装插件（挂载属性、注册全局组件） 3: 创建路由对象配置路由规则 4: 把路由对象交给vue的实例 5: 留坑&amp;lt;router-view&amp;gt;&amp;lt;/router-view&amp;gt;   a 标签来传递参数 组件router-link  to 让我们不必关心锚点值标记,给一个url   命名路由 查询字符串 1: 去哪里 &amp;lt;router-lin">
 <meta name="keywords" content="vue">
 <meta property="og:type" content="article">
-<meta property="og:title" content="vue第三天">
-<meta property="og:url" content="http://yoursite.com/2018/06/16/vue第三天/index.html">
+<meta property="og:title" content="vue第四天">
+<meta property="og:url" content="http://yoursite.com/2018/07/05/vue第四天/index.html">
 <meta property="og:site_name" content="妖怪">
-<meta property="og:description" content="复习 router基本步骤 1: 引入对象 var VueRouter = require(&amp;#39;vue-router.js&amp;#39;); 2: 安装插件 Vue.use(VueRouter); 所有的this(VueComponent).$route/$router   3: 创建路由对象 new VueRouter(options路由配置); 4: { path:&amp;#39;/xxx&amp;#39">
+<meta property="og:description" content="复习 基本使用步骤 1：引入对象 2: 安装插件（挂载属性、注册全局组件） 3: 创建路由对象配置路由规则 4: 把路由对象交给vue的实例 5: 留坑&amp;lt;router-view&amp;gt;&amp;lt;/router-view&amp;gt;   a 标签来传递参数 组件router-link  to 让我们不必关心锚点值标记,给一个url   命名路由 查询字符串 1: 去哪里 &amp;lt;router-lin">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-06-16T15:41:53.820Z">
+<meta property="og:updated_time" content="2018-07-05T14:33:50.712Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="vue第三天">
-<meta name="twitter:description" content="复习 router基本步骤 1: 引入对象 var VueRouter = require(&amp;#39;vue-router.js&amp;#39;); 2: 安装插件 Vue.use(VueRouter); 所有的this(VueComponent).$route/$router   3: 创建路由对象 new VueRouter(options路由配置); 4: { path:&amp;#39;/xxx&amp;#39">
+<meta name="twitter:title" content="vue第四天">
+<meta name="twitter:description" content="复习 基本使用步骤 1：引入对象 2: 安装插件（挂载属性、注册全局组件） 3: 创建路由对象配置路由规则 4: 把路由对象交给vue的实例 5: 留坑&amp;lt;router-view&amp;gt;&amp;lt;/router-view&amp;gt;   a 标签来传递参数 组件router-link  to 让我们不必关心锚点值标记,给一个url   命名路由 查询字符串 1: 去哪里 &amp;lt;router-lin">
   
     <link rel="alternative" href="/atom.xml" title="妖怪" type="application/atom+xml">
   
@@ -153,20 +153,20 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-vue第三天" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-vue第四天" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      vue第三天
+      vue第四天
     </h1>
   
 
         
-        <a href="/2018/06/16/vue第三天/" class="archive-article-date">
-  	<time datetime="2018-06-16T15:37:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-06-16</time>
+        <a href="/2018/07/05/vue第四天/" class="archive-article-date">
+  	<time datetime="2018-07-05T14:30:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-05</time>
 </a>
         
       </header>
@@ -174,161 +174,224 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h4 id="复习"><a href="#复习" class="headerlink" title="复习"></a>复习</h4><ul>
-<li>router基本步骤<ul>
-<li>1: 引入对象 <code>var VueRouter = require(&#39;vue-router.js&#39;);</code></li>
-<li>2: 安装插件 <code>Vue.use(VueRouter);</code><ul>
-<li>所有的this(VueComponent).$route/$router</li>
+<li>基本使用步骤<ul>
+<li>1：引入对象</li>
+<li>2: 安装插件（挂载属性、注册全局组件）</li>
+<li>3: 创建路由对象配置路由规则</li>
+<li>4: 把路由对象交给vue的实例</li>
+<li>5: 留坑<code>&lt;router-view&gt;&lt;/router-view&gt;</code></li>
 </ul>
 </li>
-<li>3: 创建路由对象 <code>new VueRouter(options路由配置);</code></li>
-<li>4: <code>{ path:&#39;/xxx&#39; ,component:Xxx组件option}</code></li>
-<li>5: 将路由对象交给Vue实例 <code>new Vue({ router:router })</code></li>
-<li>6: 给component属性留坑 <code>&lt;router-view&gt;&lt;/router-view&gt;</code></li>
+<li>a 标签来传递参数<ul>
+<li>组件router-link </li>
+<li>to 让我们不必关心锚点值标记,给一个url</li>
 </ul>
 </li>
-<li>生命周期<ul>
-<li>1: beforeCreate 和 created<ul>
-<li>beforeCreate 还未完成初始化</li>
-<li>created 已经完成初始化（数据观察||响应式），可以获取数据<ul>
-<li>this.xxx = xxx;  -&gt;  页面也显示不同的结果</li>
-<li>基于Object.defineProperty(data,’xxx’,{set:fn})</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>2: created和mounted<ul>
-<li>created 操作数据</li>
-<li>mounted 操作DOM</li>
-</ul>
-</li>
-<li>3: destroyed和active<ul>
-<li>销毁和停用，是一个类型，v-if=”false”触发</li>
-<li>激活和创建，是一个类型，v-if=”true”触发</li>
-<li>激活和停用结合内置组件keep-alive使用,频繁创建和销毁组件的时候<ul>
-<li>v-show</li>
-<li>插入和移除，在框架中还可以多一些过渡效果的行为</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>4:更改组件数据之后也会触发事件，但是这个知道就好，不常用</li>
-</ul>
-</li>
-</ul>
-<h4 id="今日重点"><a href="#今日重点" class="headerlink" title="今日重点"></a>今日重点</h4><ul>
-<li>路由<ul>
-<li>后端 : 请求 + URL 来去做判断</li>
-<li>前端 : 锚点值 来去做判断</li>
-</ul>
-</li>
-</ul>
-<h4 id="router-link"><a href="#router-link" class="headerlink" title="router-link"></a>router-link</h4><ul>
-<li>可以让我们不必担心锚点值的特殊标识<ul>
-<li>有的是 #/xxx做标识</li>
-<li>有的是 #!/xxx做标识</li>
-<li>而使用了router-link 只用保证 to属性内的值与路由规则的path一致即可</li>
-</ul>
-</li>
-<li>使用方式 <code>&lt;router-link to=&quot;/music&quot;&gt;电影&lt;/router-link&gt;</code></li>
-</ul>
-<h4 id="命名路由"><a href="#命名路由" class="headerlink" title="命名路由"></a>命名路由</h4><ul>
-<li>使用router-link<ul>
-<li>常规方式 <code>&lt;router-link to=&quot;/music&quot;&gt;电影&lt;/router-link&gt;</code></li>
-<li>命名方式 <code>&lt;router-link :to=&quot;{name:&#39;music&#39;}&quot; &gt;音乐&lt;/router-link&gt;</code></li>
-<li>注意: <strong>需要配置路由规则中有一个name叫做music的规则</strong></li>
-<li><code>{ name:&#39;music&#39;,path:&#39;/xxxx&#39;}</code></li>
-</ul>
-</li>
-<li>1:路由规则中 有name属性，:to指向这个对象，从而按规则的path生成href</li>
-</ul>
-<h4 id="参数router-link"><a href="#参数router-link" class="headerlink" title="参数router-link"></a>参数router-link</h4><ul>
+<li>命名路由<ul>
 <li>查询字符串<ul>
-<li>1:操作(去哪里？)<ul>
-<li><code>&lt;router-link :to=&quot;{ name:&#39;bj&#39; ,query:{city:&#39;顺义&#39;}   }&quot;&gt;北京&lt;/router-link&gt;</code></li>
+<li>1: 去哪里<ul>
+<li><code>&lt;router-link :to=&quot;{ name:&#39;bj&#39;,query:{id:&#39;1&#39;} }&quot;</code></li>
 </ul>
 </li>
-<li>2: 路由规则(怎么去)<ul>
-<li><code>{ name:&#39;bj&#39;, path:&#39;/beijing&#39; ,component:BeiJing}</code></li>
+<li>2: 导航<ul>
+<li><code>{ name:&#39;bj&#39;,path:&#39;/beijing&#39;,component:Beijing  }</code></li>
 </ul>
 </li>
-<li>3: 生成的效果<ul>
-<li><code>href=&quot;#/beijing?city=顺义&quot;</code></li>
+<li>3: 去了干嘛<ul>
+<li>获取路由参数 <code>this.$route.query.id</code></li>
+<li>生成a标签的href=”#/beijing”</li>
 </ul>
 </li>
 </ul>
 </li>
 <li>path的方式<ul>
-<li>1:操作(去哪里？)<ul>
-<li><code>&lt;router-link :to=&quot;{ name:&#39;bj&#39; ,params:{city:&#39;顺义&#39;}   }&quot;&gt;北京&lt;/router-link&gt;</code></li>
+<li>1: 去哪里<ul>
+<li><code>&lt;router-link :to=&quot;{ name:&#39;bj&#39;,params:{mid:&#39;1&#39;} }&quot;</code></li>
 </ul>
 </li>
-<li>2: 路由规则(怎么去)<ul>
-<li><code>{ name:&#39;bj&#39;, path:&#39;/beijing/:city&#39; ,component:BeiJing}</code></li>
-</ul>
-</li>
-<li>3: 生成的效果<ul>
-<li><code>href=&quot;#/beijing/顺义&quot;</code></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h4 id="vue-router中的对象"><a href="#vue-router中的对象" class="headerlink" title="vue-router中的对象"></a>vue-router中的对象</h4><ul>
-<li>路由信息对象 $route -&gt; 获取信息<ul>
-<li>$route, Vue.use(VueRouter) 来完成给this（组件对象挂载属性的）</li>
-<li>在所有的组件中就可以使用 this.$route获取这个对象</li>
-</ul>
-</li>
-<li>路由功能对象 $router -&gt; 操作（行为）</li>
-</ul>
-<h4 id="总结通过url传递参数"><a href="#总结通过url传递参数" class="headerlink" title="总结通过url传递参数"></a>总结通过url传递参数</h4><ul>
-<li>query的方式<ul>
-<li>1:操作(去哪里？)<ul>
-<li><code>&lt;router-link :to=&quot;{ name:&#39;bj&#39; ,params:{city:&#39;顺义&#39;}   }&quot;&gt;北京&lt;/router-link&gt;</code></li>
-</ul>
-</li>
-<li>2: 路由规则(怎么去,导航)<ul>
-<li><code>{ name:&#39;bj&#39;, path:&#39;/beijing/:city&#39; ,component:BeiJing}</code></li>
+<li>2: 导航<ul>
+<li><code>{ name:&#39;bj&#39;,path:&#39;/beijing/:mid&#39;,component:Beijing  }</code></li>
 </ul>
 </li>
 <li>3: 去了干嘛<ul>
-<li>created钩子函数：获取路由参数，发起ajax请求，把数据放到页面上</li>
-<li>查询字符串 <code>this.$route.query</code></li>
-<li>path方式 <code>this.$route.params</code></li>
+<li>获取路由参数 <code>this.$route.params.mid</code></li>
+<li>生成a标签的href=”#/beijing/1”</li>
 </ul>
 </li>
 </ul>
 </li>
 </ul>
-<h4 id="插件安装"><a href="#插件安装" class="headerlink" title="插件安装"></a>插件安装</h4><ul>
-<li>所有Vue相关的插件必须要实现install函数，在Vue.use的时候，会把Vue对象传递到install函数中，从而可以给Vue的原型挂载属性，让继承于Vue的各个组件对象都有该属性</li>
+</li>
 </ul>
-<h4 id="多视图-命名视图"><a href="#多视图-命名视图" class="headerlink" title="多视图(命名视图)"></a>多视图(命名视图)</h4><ul>
-<li>更为灵活的维护，灵活的配置修改显示的效果</li>
-<li>多个router-view 更灵活</li>
-<li>components属性是一个对象 key(坑名),value(组件)</li>
-</ul>
-<h4 id="嵌套路由"><a href="#嵌套路由" class="headerlink" title="嵌套路由"></a>嵌套路由</h4><ul>
-<li>router-view 包含router-view</li>
-<li>路由中包含子路由</li>
-<li>每个路由都映射组件<ul>
-<li>子路由path:  绝对路径/xxx，那访问就是这个路径 /xxx</li>
-<li>相对路径 xxx  ,访问则是父路由路径 /home/xxx</li>
+<ul>
+<li>对于参数传递是否带引号的问题<ul>
+<li>常量字符串 加上单引号</li>
+<li>数字、变量不加单引号</li>
 </ul>
 </li>
-<li>路由对象中加入children:[路由规则]</li>
 </ul>
-<h4 id="重定向及404"><a href="#重定向及404" class="headerlink" title="重定向及404"></a>重定向及404</h4><ul>
-<li>重定向在路由规则中 <code>{ path:&#39;/&#39;,redirect:{name:&#39;xxxx&#39;}  }</code></li>
-<li>404 在规则的最后<code>path:&#39;*&#39;,component:Xxxx</code></li>
+<ul>
+<li><p>多视图</p>
+<ul>
+<li>一次填入多个坑，灵活，并且将控制从业务逻辑代码，转移到了配置区</li>
+<li>1: 路由匹配有一个属性 components:{ 坑名:组件  }</li>
+<li>2: 当前匹配锚点值后，先有的组件 App主体部分，存在这些坑</li>
+<li>总结: router-view的数量要和组件所对应</li>
+<li>当锚点值一匹配，触发三个组件，填入三个坑</li>
+<li>坑名 <code>&lt;router-view name=&quot;xxx&quot;&gt;&lt;/router-view&gt;</code></li>
 </ul>
-<h4 id="编程式导航"><a href="#编程式导航" class="headerlink" title="编程式导航"></a>编程式导航</h4><ul>
-<li>js代码 -&gt; 导航的能力 -&gt; 页面数据变更</li>
-<li>router-link 用户来点击，页面数据变更</li>
-<li>跳转:<code>this.$router.push(路由对象{name:&#39;xx&#39;})</code></li>
-<li>根据历史记录前进后退 <code>this.$router.go(-1||1);</code></li>
+</li>
+<li><p>嵌套路由</p>
+<ul>
+<li>嵌套路由可以用来完成多页应用</li>
+<li>父路由 <ul>
+<li>path匹配 组件显示（包含视图）</li>
 </ul>
-
+</li>
+<li>子路由 1对1  path匹配，显示组件</li>
+<li>Home组件中 <router-view>  用来显示子路由的视图</router-view></li>
+<li>{ path:’/home’,component:Home ,children:[{ path:’music’,conponent:Music }]    }</li>
+<li>名称个不相关,建议子路由 叫父路由.xxx</li>
+</ul>
+</li>
+<li><p>404 和重定向</p>
+</li>
+<li>重定向写在上面 404 写在最后<ul>
+<li><code>{  path:&#39;/&#39;,redirect:{name:&#39;home&#39;}   }</code></li>
+<li><code>{  path:&#39;*&#39;, component:NotFound }</code></li>
+</ul>
+</li>
+<li>编程导航<ul>
+<li>锚点值改变页面改变<ul>
+<li><code>this.$router.push( { name:&#39;list&#39; }  );</code></li>
+</ul>
+</li>
+<li>根据浏览器历史记录前进和后退<ul>
+<li><code>this.$router.go(-1||1)</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="今日重点"><a href="#今日重点" class="headerlink" title="今日重点"></a>今日重点</h4><h4 id="历史介绍"><a href="#历史介绍" class="headerlink" title="历史介绍"></a>历史介绍</h4><ul>
+<li>2009年初，commonjs规范还未出来，此时前端开发人员编写的代码都是非模块化的，<ul>
+<li>那个时候开发人员经常需要十分留意文件加载顺序所带来的依赖问题</li>
+</ul>
+</li>
+<li>与此同时 nodejs开启了js全栈大门，而requirejs在国外也带动着前端逐步实现模块化<ul>
+<li>同时国内seajs也进行了大力推广</li>
+<li>AMD 规范 ，具体实现是requirejs define(‘模块id’,[模块依赖1,模块依赖2],function(){  return ;}) , ajax请求文件并加载</li>
+<li>Commonjs || CMD 规范 seajs 淘宝玉伯<ul>
+<li>commonjs和cmd非常相似的<ul>
+<li>cmd  require/module.exports</li>
+</ul>
+</li>
+<li>commonjs是js在后端语言的规范: 模块、文件操作、操作系统底层</li>
+<li>CMD 仅仅是模块定义</li>
+</ul>
+</li>
+<li>UMD 通用模块定义，一种既能兼容amd也能兼容commonjs 也能兼容浏览器环境运行的万能代码</li>
+</ul>
+</li>
+<li>npm/bower集中包管理的方式备受青睐，12年browserify/webpack诞生<ul>
+<li>npm 是可以下载前后端的js代码475000个包</li>
+<li>bower 只能下载前端的js代码,bower 在下载bootstrap的时候会自动的下载jquery</li>
+<li>browserify 解决让require可以运行在浏览器，分析require的关系，组装代码</li>
+<li>webpack 打包工具，占市场主流</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">(<span class="function"><span class="keyword">function</span> (<span class="params">root, factory</span>) </span>&#123;  </span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">typeof</span> exports === <span class="string">'object'</span>) &#123; </span><br><span class="line">        <span class="built_in">module</span>.exports = factory();  <span class="comment">//commonjs环境下能拿到返回值</span></span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (<span class="keyword">typeof</span> define === <span class="string">'function'</span> ) &#123;  </span><br><span class="line">        define(factory);   <span class="comment">//define(function()&#123;return 'a'&#125;)  AMD</span></span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;  </span><br><span class="line">        <span class="built_in">window</span>.eventUtil = factory();  </span><br><span class="line">    &#125;  </span><br><span class="line">&#125;)(<span class="keyword">this</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;  </span><br><span class="line">    <span class="comment">// module  </span></span><br><span class="line">    <span class="keyword">return</span> &#123;  </span><br><span class="line">        <span class="comment">//具体模块代码</span></span><br><span class="line">        addEvent: <span class="function"><span class="keyword">function</span>(<span class="params">el, type, handle</span>) </span>&#123;  </span><br><span class="line">            <span class="comment">//...  </span></span><br><span class="line">        &#125;,  </span><br><span class="line">        removeEvent: <span class="function"><span class="keyword">function</span>(<span class="params">el, type, handle</span>) </span>&#123;  </span><br><span class="line">              </span><br><span class="line">        &#125;,  </span><br><span class="line">    &#125;;  </span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h4 id="webpack打包模块的源码"><a href="#webpack打包模块的源码" class="headerlink" title="webpack打包模块的源码"></a>webpack打包模块的源码</h4><ul>
+<li>1:把所有模块的代码放入到函数中，用一个数组保存起来</li>
+<li>2:根据require时传入的数组索引，能知道需要哪一段代码</li>
+<li>3:从数组中，根据索引取出包含我们代码的函数</li>
+<li>4:执行该函数，传入一个对象 module.exports</li>
+<li>5:我们的代码，按照约定，正好是用module.exports = ‘xxxx’ 进行赋值</li>
+<li>6:调用函数结束后，module.exports从原来的空对象，就有值了</li>
+<li>7:最终return module.exports; 作为require函数的返回值</li>
+</ul>
+<h4 id="webpack配置文件"><a href="#webpack配置文件" class="headerlink" title="webpack配置文件"></a>webpack配置文件</h4><ul>
+<li>在当前命令行的目录中，创建一个webpack.config.js文件</li>
+<li>由于webpack是基于node,配置文件中的写法参照commonjs的模块导出</li>
+</ul>
+<h4 id="webpack-config-js文件配置（认识）"><a href="#webpack-config-js文件配置（认识）" class="headerlink" title="webpack.config.js文件配置（认识）"></a>webpack.config.js文件配置（认识）</h4><ul>
+<li>entry 是一个对象，程序的入口<ul>
+<li>key:随意写</li>
+<li>value: 入口文件</li>
+</ul>
+</li>
+<li>output 是一个对象,产出的资源<ul>
+<li>key: filename</li>
+<li>value : 生成的build.js</li>
+</ul>
+</li>
+<li>module 模块（对象）<ul>
+<li>loaders:[]<ul>
+<li>存在一些loader   <code>{ test:正则,loader:&#39;style-loader!css-loader&#39;    }</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="npm2-5以前"><a href="#npm2-5以前" class="headerlink" title="npm2.5以前"></a>npm2.5以前</h4><ul>
+<li>各个包内包含node_modules,会导致目录层级很深，有些包下载的时候就会报错</li>
+<li>npm2.5以后，安装的依赖包，就全部都是在平级根目录</li>
+</ul>
+<h4 id="处理css"><a href="#处理css" class="headerlink" title="处理css"></a>处理css</h4><ul>
+<li>require(‘./xxx.css’);</li>
+</ul>
+<h4 id="处理less"><a href="#处理less" class="headerlink" title="处理less"></a>处理less</h4><ul>
+<li><code>loader:&#39;style-loader!css-loader!less-loader&#39;</code></li>
+</ul>
+<h4 id="处理ES6"><a href="#处理ES6" class="headerlink" title="处理ES6"></a>处理ES6</h4><ul>
+<li>babel是一个语法转换器,可以单独使用，也可以给打包工具结合起来使用</li>
+<li>webpack  -&gt; babel-loader</li>
+<li>browserify -&gt; babelify</li>
+<li>可以转换es6/es7/react -&gt; es5</li>
+<li>设置当前语法: preset(预设)  es2015</li>
+<li>下载预设<ul>
+<li>babel-loader + babel-preset-env(es2015/2016/2017)</li>
+</ul>
+</li>
+<li>babel默认只转换语法部分 关键字 </li>
+<li>函数部分需要插件支持</li>
+</ul>
+<h4 id="处理文件-base64"><a href="#处理文件-base64" class="headerlink" title="处理文件 + base64"></a>处理文件 + base64</h4><ul>
+<li>url-loader 可以将文件生成为base64编码，到build.js中</li>
+<li>文件在base64加密后会比原来大三分之一</li>
+<li>应用场景是比较小的图片 4kb以内的图片</li>
+</ul>
+<h4 id="特殊符号"><a href="#特殊符号" class="headerlink" title="特殊符号"></a>特殊符号</h4><ul>
+<li>! 分隔多个loader</li>
+<li>字符串后跟上? 参数   key=value&amp;key=value</li>
+<li>对象: options:{ key:value,key:value  }</li>
+</ul>
+<h4 id="字符串内使用的内置变量"><a href="#字符串内使用的内置变量" class="headerlink" title="字符串内使用的内置变量"></a>字符串内使用的内置变量</h4><ul>
+<li>name: <code>[name].[ext]</code></li>
+<li>name是获取原文件名,ext是获取原文件名的后缀</li>
+<li>output:{   path:’绝对路径’, //设置产出的资源目录 ,filename:’build.js’}</li>
+</ul>
+<h4 id="处理html"><a href="#处理html" class="headerlink" title="处理html"></a>处理html</h4><ul>
+<li>html-webpack-plugin</li>
+<li>1:下载</li>
+<li>2:在webpack.config.js文件中引入</li>
+<li>3:plugins属性中，配置该对象</li>
+<li>4:给其options设置template（参照物）</li>
+</ul>
+<h4 id="单文件方式"><a href="#单文件方式" class="headerlink" title="单文件方式"></a>单文件方式</h4><ul>
+<li>依赖 vue-loader</li>
+<li>vue-template-compiler</li>
+</ul>
+<h4 id="webpack-dev-server"><a href="#webpack-dev-server" class="headerlink" title="webpack-dev-server"></a>webpack-dev-server</h4><h4 id="mint-ui"><a href="#mint-ui" class="headerlink" title="mint-ui"></a>mint-ui</h4><ul>
+<li>移动端组件库</li>
+<li><a href="https://mint-ui.github.io/docs/#/zh-cn2" target="_blank" rel="noopener">https://mint-ui.github.io/docs/#/zh-cn2</a></li>
+<li>DEMO: mint-ui-master\example\pages</li>
+</ul>
+<h4 id="vue-rerource-了解"><a href="#vue-rerource-了解" class="headerlink" title="vue-rerource(了解)"></a>vue-rerource(了解)</h4><h4 id="axios"><a href="#axios" class="headerlink" title="axios"></a>axios</h4><ul>
+<li><a href="https://segmentfault.com/a/1190000008470355?utm_source=tuicool&amp;utm_medium=referral" target="_blank" rel="noopener">https://segmentfault.com/a/1190000008470355?utm_source=tuicool&amp;utm_medium=referral</a></li>
+</ul>
+<h4 id="options"><a href="#options" class="headerlink" title="options"></a>options</h4><h4 id="拦截器"><a href="#拦截器" class="headerlink" title="拦截器"></a>拦截器</h4><h4 id="拦截器应用场景"><a href="#拦截器应用场景" class="headerlink" title="拦截器应用场景"></a>拦截器应用场景</h4><h4 id="合并请求"><a href="#合并请求" class="headerlink" title="合并请求"></a>合并请求</h4>
       
 
       
@@ -423,7 +486,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/06/16/vue第三天/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/07/05/vue第四天/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -437,18 +500,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2018/07/05/vue第四天/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          vue第四天
-        
-      </div>
-    </a>
   
-  
-    <a href="/2018/06/16/vue第二天/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">vue第二天</div>
+    <a href="/2018/06/16/vue第三天/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">vue第三天</div>
       <i class="icon-circle-right"></i>
     </a>
   
