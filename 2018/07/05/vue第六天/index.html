@@ -6,16 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2018/7 | 妖怪</title>
+  <title>vue第六天 | 妖怪</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="keywords" content="前端,js,jquery,javascript,html5,css3">
-<meta property="og:type" content="website">
-<meta property="og:title" content="妖怪">
-<meta property="og:url" content="http://yoursite.com/archives/2018/07/index.html">
+  <meta name="description" content="准备开始 nrm -&amp;gt; 是一个全局命令行工具 npm i -g nrm  用来管理npm的镜像源  查看当前镜像源 nrm ls  切换镜像源  nrm use taobao复习   axios options(defaults) baseURL :基本URL params:是一个对象， url上的查询字符串 headers:是一个对象，设置头信息   拦截器 视图层面的应用场景 请求发起的">
+<meta name="keywords" content="vue">
+<meta property="og:type" content="article">
+<meta property="og:title" content="vue第六天">
+<meta property="og:url" content="http://yoursite.com/2018/07/05/vue第六天/index.html">
 <meta property="og:site_name" content="妖怪">
+<meta property="og:description" content="准备开始 nrm -&amp;gt; 是一个全局命令行工具 npm i -g nrm  用来管理npm的镜像源  查看当前镜像源 nrm ls  切换镜像源  nrm use taobao复习   axios options(defaults) baseURL :基本URL params:是一个对象， url上的查询字符串 headers:是一个对象，设置头信息   拦截器 视图层面的应用场景 请求发起的">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-07-05T15:55:39.743Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="妖怪">
+<meta name="twitter:title" content="vue第六天">
+<meta name="twitter:description" content="准备开始 nrm -&amp;gt; 是一个全局命令行工具 npm i -g nrm  用来管理npm的镜像源  查看当前镜像源 nrm ls  切换镜像源  nrm use taobao复习   axios options(defaults) baseURL :基本URL params:是一个对象， url上的查询字符串 headers:是一个对象，设置头信息   拦截器 视图层面的应用场景 请求发起的">
   
     <link rel="alternative" href="/atom.xml" title="妖怪" type="application/atom+xml">
   
@@ -149,36 +153,144 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-vue第六天" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      vue第六天
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/07/05/vue第六天/" class="archive-article-date">
+
+        
+        <a href="/2018/07/05/vue第六天/" class="archive-article-date">
   	<time datetime="2018-07-05T15:50:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-05</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/07/05/vue第六天/">vue第六天</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="准备开始"><a href="#准备开始" class="headerlink" title="准备开始"></a>准备开始</h3><ul>
+<li><p>nrm -&gt; 是一个全局命令行工具 <code>npm i -g nrm</code><br>  用来管理npm的镜像源</p>
+<ul>
+<li>查看当前镜像源 nrm ls </li>
+<li>切换镜像源  nrm use taobao<h4 id="复习"><a href="#复习" class="headerlink" title="复习"></a>复习</h4></li>
+</ul>
+</li>
+<li>axios<ul>
+<li>options(defaults)<ul>
+<li>baseURL :基本URL</li>
+<li>params:是一个对象， url上的查询字符串</li>
+<li>headers:是一个对象，设置头信息</li>
+</ul>
+</li>
+<li>拦截器<ul>
+<li>视图层面的应用场景<ul>
+<li>请求发起的时候，开启loadding图标</li>
+<li>响应回来的时候,关闭loadding图标</li>
+</ul>
+</li>
+<li>数据层面的应用（移动端原生应用）<ul>
+<li>在发起请求的时候，自己做一个cookie来标识自己的身份</li>
+<li>在请求拦截器中，给请求头添加这个cookie，服务器就能认识你了</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>合并请求<ul>
+<li>请求省、市数据，只有都成功才算成功，一个失败，就算失败</li>
+<li>不保证顺序</li>
+</ul>
+</li>
+<li>取消请求<ul>
+<li>核心xhr.abort(); //客户端主动关闭连接</li>
+<li>var CancelToken = this.$ajax.CancelToken;</li>
+<li>var source = CancelToken.source();</li>
+<li>在options中传递参数 cancelToken: source.token</li>
+<li>调用取消，就相当于调用reject() ,触发catch -&gt; xhr.abort();<ul>
+<li>source.cancel(); </li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="今日重点"><a href="#今日重点" class="headerlink" title="今日重点"></a>今日重点</h4><h4 id="模块"><a href="#模块" class="headerlink" title="模块"></a>模块</h4><ul>
+<li>有时导出的对象是值(commonjs)，有时导出的是{ default:值}(es6)</li>
+<li>es6的导入 优先选择{ default:值} ,如果没有default属性，就作为 整个对象获取<ul>
+<li>通过es6导入，我们无需关系是否有default属性来导出<ul>
+<li>有就拿，没有就是整体对象</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>commonjs  导入:require  导出:module.exports</li>
+<li>ES6      导入:import xxx from ‘./xx.js’;   <pre><code>+  导出: export default 数据
+</code></pre></li>
+</ul>
+<h4 id="ES6模块"><a href="#ES6模块" class="headerlink" title="ES6模块"></a>ES6模块</h4><ul>
+<li>默认导出(导入名可以随便写)<ul>
+<li>入 <code>import Xxx from &#39;./xxx.js&#39;;</code></li>
+<li>出 <code>export default Obj;</code></li>
+</ul>
+</li>
+<li>声明式(导入名称一定与导出的一致)<ul>
+<li>先声明，再导出 <ul>
+<li><code>let num1 = 1; export { num1 }</code></li>
+</ul>
+</li>
+<li>声明并导出<ul>
+<li><code>export let num2 = 1;</code></li>
+</ul>
+</li>
+<li>导入 <code>import { num1,num2 } from &#39;./xxx.js&#39;;</code></li>
+</ul>
+</li>
+</ul>
+<h4 id="http-server"><a href="#http-server" class="headerlink" title="http-server"></a>http-server</h4><ul>
+<li>在当前有index.html的命令行输入 hs -o -p 端口号</li>
+</ul>
+<h4 id="下载依赖"><a href="#下载依赖" class="headerlink" title="下载依赖"></a>下载依赖</h4><ul>
+<li>npm i vue vue-router axios moment vue-preview mint-ui -S &amp;&amp; npm i style-loader css-loader less less-loader url-loader file-loader babel-core babel-loader babel-preset-env babel-plugin-transform-runtime vue-loader vue-template-compiler html-webpack-plugin webpack webpack-dev-server -D</li>
+</ul>
 
-        <div class="article-info info-on-right">
-          
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/payment.jpg">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -190,95 +302,106 @@
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/07/05/vue第六天/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/07/05/vue第五天/" class="archive-article-date">
-  	<time datetime="2018-07-05T15:48:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-05</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2018/07/05/vue第五天/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">vue第五天</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/07/05/vue第五天/">vue第五天</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">vue</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/07/05/vue第四天/" class="archive-article-date">
-  	<time datetime="2018-07-05T14:30:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-05</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/07/05/vue第四天/">vue第四天</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">vue</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
   
 
-    
+  
 
 
           </div>
@@ -301,8 +424,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
