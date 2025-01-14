@@ -13,13 +13,13 @@ export default defineConfig({
     ],
 
     sidebar: [
-      {
-        text: '示例',
-        items: [
-          { text: 'Markdown 示例', link: '/markdown-examples' },
-          { text: 'Runtime API 示例', link: '/api-examples' },
-        ],
-      },
+      // {
+      //   text: '示例',
+      //   items: [
+      //     { text: 'Markdown 示例', link: '/markdown-examples' },
+      //     { text: 'Runtime API 示例', link: '/api-examples' },
+      //   ],
+      // },
       {
         text: '前端开发环境',
         items: [
