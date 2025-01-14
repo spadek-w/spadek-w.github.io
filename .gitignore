@@ -18,6 +18,9 @@ selenium-debug.log
 *.local
 .history
 .vscode
+zmkj/
+dist/
+.vitepress/cache/
 
 package-lock.json
 pnpm-lock.yaml
