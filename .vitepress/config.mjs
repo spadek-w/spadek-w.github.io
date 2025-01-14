@@ -3,6 +3,7 @@ import { defineConfig } from 'vitepress'
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   outDir: 'zmkj/dist',
+  base: '/spadek-w.github.io/', // 这里填github的仓库名称
   title: '智棉科技前端文档',
   description: '前端文档',
   themeConfig: {
